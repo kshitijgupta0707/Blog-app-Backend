@@ -1,0 +1,21 @@
+const express = require("express");
+const router = express.Router();
+const { createPost } = require("../controllers/createPost");
+const { getAllPosts } = require("../controllers/getAllPosts");
+const { getPostById } = require("../controllers/getPost");
+const { likePost } = require("../controllers/likePost");
+const { commentOnPost } = require("../controllers/commentOnPost");
+const { unlikePost } = require("../controllers/unlikePost");
+const { getComments } = require("../controllers/getComments");
+const { deleteComment } = require("../controllers/deleteComment");
+
+router.get("/", (req, res) => res.send("<h1> This is home page </h1>"));
+router.post("/posts/create", createPost);
+router.get("/posts", getAllPosts);
+router.get("/posts/:id", getPostById);
+router.post("/like/:id", likePost);
+router.put("/unlike/:id", unlikePost);
+router.post("/comment/:id", commentOnPost);
+router.get("/getcomments/:id", getComments);
+router.delete("/delete/comment/:id", deleteComment);
+module.exports = { router };
