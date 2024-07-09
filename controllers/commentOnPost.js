@@ -32,8 +32,6 @@ const commentOnPost = async (req, res) => {
       .populate("comments") // id ki jagah actual comments dedo bs yeh mtlb hain iska
       .exec(); //execute krdo
 
-
-
     //it will return the updated document new: true ---> 3 paramter
     //you can fetch the actual document using populate //populate the comments arrray with cmment document
 
